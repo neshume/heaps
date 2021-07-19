@@ -286,19 +286,23 @@ class System {
 
 	#if hlsdl
 	public static function getClipboardText() : String {
-		return sdl.Sdl.getClipboardText();
+		//return sdl.Sdl.getClipboardText();
+		return "";//TODO: workaround for broken haxe lib [NESHUME]
 	}
 	
 	public static function setClipboardText(text:String) : Bool {
-		return sdl.Sdl.setClipboardText(text);
+		//return sdl.Sdl.setClipboardText(text);
+		return true;//TODO: workaround for broken haxe lib [NESHUME]
 	}
 	#else
 	public static function getClipboardText() : String {
-		return hl.UI.getClipboardText();
+		//return hl.UI.getClipboardText();
+		return "";//TODO: workaround for broken haxe lib [NESHUME]
 	}
 	
 	public static function setClipboardText(text:String) : Bool {
-		return hl.UI.setClipboardText(text);
+		//return hl.UI.setClipboardText(text);
+		return true;//TODO: workaround for broken haxe lib [NESHUME]
 	}
 	#end
 
