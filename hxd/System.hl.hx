@@ -284,12 +284,20 @@ class System {
 	}
 	#end
 
-	#if hlsdl
+	#if (hl_ver < version("1.12.0"))
+	public static function getClipboardText() : String {
+		return null;
+	}
+
+	public static function setClipboardText(text:String) : Bool {
+		return false;
+	}
+	#elseif hlsdl
 	public static function getClipboardText() : String {
 		//return sdl.Sdl.getClipboardText();
 		return "";//TODO: workaround for broken haxe lib [NESHUME]
 	}
-	
+
 	public static function setClipboardText(text:String) : Bool {
 		//return sdl.Sdl.setClipboardText(text);
 		return true;//TODO: workaround for broken haxe lib [NESHUME]
@@ -299,7 +307,7 @@ class System {
 		//return hl.UI.getClipboardText();
 		return "";//TODO: workaround for broken haxe lib [NESHUME]
 	}
-	
+
 	public static function setClipboardText(text:String) : Bool {
 		//return hl.UI.setClipboardText(text);
 		return true;//TODO: workaround for broken haxe lib [NESHUME]
